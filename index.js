@@ -30,7 +30,7 @@ app.get('/dangerzone', (req, res) => {
   var mycat = req.query.category
   res.setHeader('Content-Type', 'text')
   if (mycat) {
-    var joke = execSync(`curl ${chuck_api}?category=${mycat}|jq ".value"`) //DANGER, Johnny! 
+    var joke = execSync(`curl ${chuck_api}?category=${mycat}`) //DANGER, Johnny! 
     res.send(joke)
   } else {
     var joke = execSync(`curl ${chuck_api}|jq ".value"`)
