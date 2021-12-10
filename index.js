@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
 app.get('/dangerzone', (req, res) => {
   // Code for the brave: remote code execution will make Chuck Norris knock on your door at night
   var mycat = req.query.category
+  console.log("INFO: received mycat: " + mycat)
   res.setHeader('Content-Type', 'text')
   if (mycat) {
     var joke = execSync(`curl ${chuck_api}?category=${mycat}`) //DANGER, Johnny! 
